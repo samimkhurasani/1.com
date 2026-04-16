@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>M.Samim Khurasani | پروفایل حرفه‌ای مدرن</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Vazirmatn', 'Segoe UI', sans-serif;
+            background: #0f0c29;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* انیمیشن پس‌زمینه گرادیان متحرک */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(125deg, #0f0c29, #302b63, #24243e);
+            z-index: -2;
+            animation: gradientBG 15s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ذرات متحرک پیشرفته */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* کانتینر اصلی با انیمیشن ورود */
+        .container {
+            max-width: 550px;
+            width: 100%;
+            margin: 0 auto;
+            animation: fadeInScale 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* کارت اصلی با افکت شیشه‌ای مدرن */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* هدر با موج متحرک */
+        .profile-header {
+            background: linear-gradient(135deg, rgba(0, 180, 219, 0.7), rgba(0, 131, 176, 0.9));
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"/><path d="M0,0V15.81C13,21.25,27.93,25.67,44.24,28.45c69.76,11.6,136.47,7.22,206.42-5.49C311.27,10.17,379,20.32,447.52,28.9c69.18,8.86,138.28,10.75,207.5,3.42,69.51-7.39,136.33-26.58,206.8-37.5C924.65,7.63,1025.55,22.38,1200,41.51V0Z" opacity=".5" fill="%23ffffff"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c119-21.16,234.23-52.42,354.19-40.66C933.16,9.26,1041.2,35.5,1200,56.91V0Z" fill="%23ffffff"/></svg>') repeat-x;
+            background-size: 1200px 30px;
+            animation: waveMove 8s linear infinite;
+        }
+
+        @keyframes waveMove {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+
+        /* تصویر پروفایل با انیمیشن چرخش */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            animation: floatImage 3s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: #ffd700;
+        }
+
+        /* نام با انیمیشن تایپ‌رایتر */
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 15px 0 5px;
+            background: linear-gradient(120deg, #fff, #ffd966, #ff9966);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* متن بیو با تایپ‌رایتر */
+        .profile-bio {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+
+        /* نشانگرها با افکت نئون */
+        .info-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .badge:hover {
+            border-color: #ffd700;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .weather {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* لینک‌های شبکه‌های اجتماعی با انیمیشن سه‌بعدی */
+        .profile-links {
+            padding: 30px 25px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 14px 20px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-item:hover {
+            transform: translateX(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 18px;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .link-item:hover .link-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .instagram { background: radial-gradient(circle at 30% 110%, #fdf497, #fd5949, #d6249f); color: white; }
+        .tiktok { background: #000; color: #00f2ea; box-shadow: 0 0 8px #00f2ea; }
+        .facebook { background: #1877f2; color: white; }
+        .snapchat { background: #FFFC00; color: black; }
+        .telegram { background: #26A5E4; color: white; }
+        .twitter { background: #1DA1F2; color: white; }
+
+        .link-text {
+            flex-grow: 1;
+            text-align: right;
+            font-weight: 600;
+            color: #f0f3fa;
+            font-size: 1.05rem;
+        }
+
+        .link-arrow {
+            color: #ffd966;
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
+
+        .link-item:hover .link-arrow {
+            transform: translateX(-6px);
+        }
+
+        /* فوتر با انیمیشن */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd966;
+            text-decoration: underline;
+        }
+
+        /* ساعت زنده */
+        .live-time {
+            font-family: monospace;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 550px) {
+            .profile-name { font-size: 1.5rem; }
+            .link-text { font-size: 0.9rem; }
+            .link-icon { width: 42px; height: 42px; font-size: 1.3rem; }
+            .profile-img { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+v<body>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="samim.jpg" alt="Safiullah Mahzon" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Safiullah+Mahzon&background=00b4db&color=fff&size=120'">
+                <h1 class="profile-name">M.Samim Khurasani </h1>
+                <p class="profile-bio">فارغ است از خودنمايى، جوهر اقبال ما ...🍃</p>
+                <p class="profile-bio" id="typingText">توسعه‌دهنده وب | تولیدکننده محتوای جذاب</p>
+                <div class="info-badges">
+                    <span class="badge"><i class="fas fa-code"></i> Truth Seeker</span>
+                    <span class="badge live-time" id="liveClock">--:--:--</span>
+                </div>
+                <div class="info-badges">
+                    <span class="weather"><i class="fas fa-cloud-sun"></i> <span id="weatherTemp">26°C</span> <span id="weatherDesc">آفتابی</span></span>
+                    <span class="badge"><i class="fas fa-map-marker-alt"></i> Afghanistan</span>
+                </div>
+            </div>
+
+            <div class="profile-links">
+                <a href="https://www.instagram.com/m_samim_khurasani?igsh=MXE0ZXJuZmUxZGNzYQ==" class="link-item" target="_blank">
+                    <div class="link-icon instagram"><i class="fab fa-instagram"></i></div>
+                    <div class="link-text">Instagram</div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <a href="https://www.tiktok.com/@seda_quran_11?_t=ZN-8zMysHEYOIg&_r=1" class="link-item" target="_blank">
+                    <div class="link-icon tiktok"><i class="fab fa-tiktok"></i></div>
+                    <div class="link-text">Tiktok</div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <a href="https://www.facebook.com/share/18b6qcKcbA/?mibextid=wwXIfr" class="link-item" target="_blank">
+                    <div class="link-icon facebook"><i class="fab fa-facebook-f"></i></div>
+                    <div class="link-text">Fecbook</div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <a href="https://snapchat.com/t/jVinbi10" class="link-item" target="_blank">
+                    <div class="link-icon snapchat"><i class="fab fa-snapchat-ghost"></i></div>
+                    <div class="link-text">Snapchat</div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <a href="https://t.me/Khurasanisaib" class="link-item" target="_blank">
+                    <div class="link-icon telegram"><i class="fab fa-telegram-plane"></i></div>
+                    <div class="link-text">Telegram</div>
+                    <div class="link-arrow">←</div>
+                </a>
+
+                <a href="https://x.com/samimkhurasani?s=21" class="link-item" target="_blank">
+                    <div class="link-icon twitter"><i class="fab fa-twitter"></i></div>
+                    <div class="link-text">Twitter(X)</div>
+                    <div class="link-arrow">←</div>
+                </a>
+            </div>
+
+            <div class="footer">
+                <p>© 2025 Safiullah Mahzon - تمامی حقوق محفوظ است</p>
+                <div class="footer-links">
+                    <a href="#" id="cookieLink">تنظیمات کوکی</a>
+                    <a href="mailto:report@safiullahmahzon8@gmail.com">گزارش تخلف</a>
+                    <a href="#" id="privacyLink">حریم خصوصی</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== انیمیشن ذرات ==========
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 5 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 10 + 8 + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // ========== ساعت زنده ==========
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('liveClock').innerHTML = `${hours}:${minutes}:${seconds}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // ========== آب و هوای پویا ==========
+        const weathers = [
+            { temp: '26°C', desc: 'آفتابی ☀️' },
+            { temp: '22°C', desc: 'نیمه ابری ⛅' },
+            { temp: '18°C', desc: 'بارانی 🌧️' },
+            { temp: '24°C', desc: 'ابری ☁️' },
+            { temp: '28°C', desc: 'گرم و آفتابی 🔥' }
+        ];
+        let weatherIndex = 0;
+        function updateWeather() {
+            const w = weathers[weatherIndex % weathers.length];
+            document.getElementById('weatherTemp').innerHTML = w.temp;
+            document.getElementById('weatherDesc').innerHTML = w.desc;
+            weatherIndex++;
+        }
+        updateWeather();
+        setInterval(updateWeather, 20000);
+
+        // ========== انیمیشن تایپ‌رایتر ==========
+        const texts = [
+           
+            
+
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+
+        function typeEffect() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                typingElement.innerHTML = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+            } else {
+                typingElement.innerHTML = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(() => {}, 2000);
+                }
+            }
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+        typeEffect();
+
+        // ========== لینک‌های فوتر ==========
+        document.getElementById('cookieLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('شما می‌توانید تنظیمات کوکی را در مرورگر خود مدیریت کنید.');
+        });
+        document.getElementById('privacyLink')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('حریم خصوصی شما برای ما مهم است. اطلاعات شخصی شما محفوظ می‌ماند.');
+        });
+    </script>
+</body>
+</html>
